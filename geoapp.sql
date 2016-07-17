@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: 127.0.0.1
--- Время создания: Июл 17 2016 г., 16:16
+-- Время создания: Июл 17 2016 г., 17:30
 -- Версия сервера: 5.7.11
 -- Версия PHP: 5.6.19
 
@@ -53,7 +53,8 @@ INSERT INTO `points` (`id`, `lat`, `lon`, `geotext`, `updated_at`, `created_at`)
 --
 ALTER TABLE `points`
   ADD PRIMARY KEY (`id`),
-  ADD KEY `lat` (`lat`,`lon`);
+  ADD KEY `lat` (`lat`) USING BTREE,
+  ADD KEY `lon` (`lon`) USING BTREE;
 
 --
 -- AUTO_INCREMENT для сохранённых таблиц
